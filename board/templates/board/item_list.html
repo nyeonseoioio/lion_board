@@ -1,0 +1,23 @@
+<!-- <h1 style = "font-weight : bold;">판매 List</h1>
+{% block content %}
+{% for item in items_list %}
+<li><a href="{% url 'board:Item_detail' items.id %}">{{item.title}}</a></li>
+{% endfor %}
+{% endblock %} -->
+
+
+<h1>List View</h1>
+
+{% for object in object_list %}
+<dir>
+    <!-- 여기서 url 뒤에 들어가는 건 url에서 정의한 이름을 적는 칸 -->
+    <!-- {% url 'app_name:url에서 정의한 name%} -->
+<h3><a href="{% url 'spring:detail' object.id %}">{{object.title}}--{{object.price}}원</a></h3>
+</dir>
+{% endfor %}
+
+<dir>
+    <form action="{% url 'spring:create'%}">
+    <input type="submit" value="글쓰기" id="">
+    </form>
+</dir>
